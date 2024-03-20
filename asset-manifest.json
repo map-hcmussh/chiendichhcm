@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/chiendichhcm/static/css/main.47331df8.css",
-    "main.js": "/chiendichhcm/static/js/main.d7e15588.js",
-    "static/js/453.b3cf07ff.chunk.js": "/chiendichhcm/static/js/453.b3cf07ff.chunk.js",
+    "main.css": "/chiendichhcm/static/css/main.9b799b0f.css",
+    "main.js": "/chiendichhcm/static/js/main.a6710b3c.js",
+    "static/js/453.9a8171b5.chunk.js": "/chiendichhcm/static/js/453.9a8171b5.chunk.js",
     "static/media/flag.gif": "/chiendichhcm/static/media/flag.b032198d8d4038415e41.gif",
     "static/media/93-năm.png": "/chiendichhcm/static/media/93-năm.7405db048abeab4147e3.png",
     "static/media/DTN.svg": "/chiendichhcm/static/media/DTN.b15e5cee8dc2f8dd788f1808acea1279.svg",
@@ -11,12 +11,12 @@
     "static/media/ddl2.png": "/chiendichhcm/static/media/ddl2.8b70b4bcc5e960f1a4fb.png",
     "static/media/ddl1.png": "/chiendichhcm/static/media/ddl1.b4f2038e773265cc8376.png",
     "index.html": "/chiendichhcm/index.html",
-    "main.47331df8.css.map": "/chiendichhcm/static/css/main.47331df8.css.map",
-    "main.d7e15588.js.map": "/chiendichhcm/static/js/main.d7e15588.js.map",
-    "453.b3cf07ff.chunk.js.map": "/chiendichhcm/static/js/453.b3cf07ff.chunk.js.map"
+    "main.9b799b0f.css.map": "/chiendichhcm/static/css/main.9b799b0f.css.map",
+    "main.a6710b3c.js.map": "/chiendichhcm/static/js/main.a6710b3c.js.map",
+    "453.9a8171b5.chunk.js.map": "/chiendichhcm/static/js/453.9a8171b5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.47331df8.css",
-    "static/js/main.d7e15588.js"
+    "static/css/main.9b799b0f.css",
+    "static/js/main.a6710b3c.js"
   ]
 }
