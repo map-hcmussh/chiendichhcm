@@ -1,0 +1,911 @@
+.leaflet-container {
+    position   : relative;
+    right      : 0;
+    left       : 0;
+    width      : 100vw;
+    height     : calc(82vh - 30px);
+    /* left    : 10vw; */
+    z-index    : 97;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Lobster&family=Signika:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css');
+
+
+
+.MAP,
+body {
+    background-image: url("./asset/93-năm.png");
+    background-size : cover;
+    position        : relative;
+}
+
+.main {
+    display: block;
+}
+
+/*.item{
+      background-color: rgba(134, 53, 53, 0.8);
+  
+  }*/
+
+.main .background {
+    height    : calc(14vh - 30px);
+    display   : block;
+    position  : relative;
+    object-fit: fill;
+}
+
+.info_logo {
+    display        : flex;
+    justify-content: center;
+}
+
+.logo {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.info_img {
+    width     : 12vw;
+    height    : 17vh;
+    object-fit: contain;
+    padding   : 0;
+}
+
+._img {
+    object-fit: contain;
+    margin    : 5% .4vw 10% .4vw;
+    height    : 4vh;
+}
+
+.info_big {
+    display: flex;
+}
+
+
+#info_title {
+    display: block;
+    padding: 1vh 0 0 0px;
+}
+
+.info_hh1 {
+    font-size  : 100%;
+    font-weight: bold;
+    color      : rgb(0, 0, 0) !important;
+    font-family: 'Time new roman';
+    font-style : italic;
+    right      : 0;
+    text-align : left;
+}
+
+.info_p {
+    padding    : 1vh 1vw;
+    font-size  : 2.5vh;
+    font-family: 'Time new roman';
+    text-indent: 5vh;
+    color      : rgb(0, 0, 0) !important;
+    margin     : 0;
+    text-align : justify;
+}
+
+#title {
+    display        : flex;
+    justify-content: center;
+    text-align     : center;
+    position       : relative;
+}
+
+#title .hh1 {
+    font-size  : calc(3vh - 1px);
+    font-weight: bold;
+    color      : rgb(20, 14, 14);
+    font-family: 'Roboto', sans-serif;
+    color      : #cc5b3e;
+    margin     : 0;
+}
+
+#info {
+    background-image : url("https://cdn.glitch.global/90845d8e-81a9-424d-b13a-0acd2c0b3b63/4b65a8b55dcdf3ee10db8703ec2b3be6.jpg?v=1700156070316");
+    background-repeat: no-repeat;
+    background-size  : cover;
+    display          : block;
+    width            : 25vw;
+    height           : calc(82vh - 30px);
+    top              : calc(14vh - 30px);
+    overflow         : auto;
+    position         : absolute;
+    transition       : transform 1s ease;
+    /* transform     : translateX(100%); */
+    right            : -26%;
+    display          : block;
+    z-index          : 98;
+    transition       : all 1s ease-in-out;
+}
+
+
+
+#info::-webkit-scrollbar {
+    width           : .5vw;
+    background-color: rgb(255, 255, 255);
+}
+
+#info::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#info::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(-45deg, rgb(211, 163, 118), rgb(158, 126, 20));
+    border-radius   : 50px;
+}
+
+.nut {
+    right   : .8vw;
+    position: absolute;
+    z-index : 98;
+    top     : calc(10vh - 30px);
+}
+
+
+#nut {
+    background-color   : white;
+    background-color   : transparent;
+    border             : none;
+    color              : #FFFFFF;
+    text-align         : center;
+    transition-duration: 0.4s;
+    text-decoration    : none;
+    overflow           : hidden;
+    cursor             : pointer;
+    z-index            : 98;
+}
+
+#nut span {
+    cursor    : pointer;
+    display   : inline-block;
+    position  : relative;
+    transition: 0.5s;
+}
+
+#nut span:after {
+    content   : '\00bb';
+    position  : absolute;
+    opacity   : 0;
+    top       : 0;
+    right     : -.5vw;
+    transition: 0.5s;
+}
+
+#nut:hover span {
+    padding-right: 1vw;
+}
+
+#nut:hover span:after {
+    opacity: 1;
+    right  : 0;
+}
+
+#nut span img {
+    background-color: rgba(117, 117, 117, 0.329);
+    padding         : 2px;
+    border-radius   : 3px;
+    object-fit      : contain;
+    width           : 3vh;
+}
+
+
+
+
+
+
+#info.active {
+    /* transform: translateX(0); */
+    right     : 0%;
+    transition: all 1s ease-in-out;
+}
+
+
+
+
+/* #map {
+    position: relative;
+    right   : 0;
+    left    : 0;
+    width   : 80vw;
+    height  : 82vh;
+    left    : 10vw;
+} */
+
+#m {
+    border-color: antiquewhite;
+}
+
+
+/*
+  #directions {
+      position: absolute;
+      z-index: 1000;
+      width: 30%;
+      max-height: 50%;
+      right: 20px;
+      top: 20px;
+      overflow-y: auto;
+      background: white;
+      font-family: Arial, Helvetica, Verdana;
+      line-height: 1.5;
+      font-size: 14px;
+      padding: 10px;
+  }*/
+
+
+
+
+
+.text-island {
+    display        : flex;
+    justify-content: center;
+    font-size      : 80%;
+    font-weight    : bold;
+    font-family    : Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.line {
+    height          : .1vh;
+    background-color: black;
+}
+
+.footpage {
+    display         : flex;
+    justify-content : center;
+    height          : 3.8vh;
+    background-color: #ffffff4b;
+    bottom          : 0;
+}
+
+#ft {
+    margin: 0;
+}
+
+#ft .ft_a {
+    font-size      : 69%;
+    font-family    : Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    text-decoration: none !important;
+    color          : #cc5b3e !important;
+    margin         : 0;
+    text-align     : center;
+}
+
+#ft {
+    display: block;
+}
+
+.leaflet-control-zoom-in span,
+.leaflet-control-zoom-out span {
+    color: black;
+}
+
+
+.my-div-icon {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    text-align      : center;
+    background-color: #ffffff00;
+    flex-direction  : column
+}
+
+
+
+.my-div-icon .icon-image {
+    object-fit         : cover;
+    text-align         : center;
+    background-color   : transparent;
+    border-radius      : 50%;
+    padding            : .1vh;
+    background-position: center;
+    background-size    : cover;
+
+}
+
+.my-div-icon .icon-image-arrow1 {
+    object-fit         : cover;
+    text-align         : center;
+    background-color   : transparent;
+    border-radius      : 50%;
+    padding            : .1vh;
+    background-position: center;
+    background-size    : cover;
+
+}
+
+
+.icon-text {
+    font-size       : 1.5vh;
+    margin          : 0 !important;
+    /* Reset margin to ensure proper alignment */
+    color           : rgb(255, 9, 9);
+    text-align      : center;
+    width           : 100%;
+    background-color: transparent;
+    font-family     : 'Signika', sans-serif;
+}
+
+
+
+.animated-marker-icon {
+    background-color: red;
+    width           : 12px;
+    height          : 12px;
+    border-radius   : 50%;
+}
+
+.box {
+    display : block;
+    position: absolute;
+    top     : calc(16vh - 30px);
+    left    : 2.9vw;
+    padding : 0;
+}
+
+.container {
+    display: block;
+}
+
+.box.container {
+    padding-left : 0px !important;
+    padding-right: 0px !important;
+    margin-bottom: 0px !important;
+    height       : 3.8vh;
+}
+
+/* .container input {
+    display: none;
+} */
+
+.container .checkmark {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    width          : 4.2vw;
+    height         : 3.8vh;
+    border         : .2vh rgb(173, 130, 74) solid;
+    border-radius  : 7px;
+    font-size      : 2.0vh;
+    font-family    : 'Signika', sans-serif;
+    color          : rgb(109, 42, 42);
+    cursor         : pointer;
+    margin         : 2vh 0;
+
+}
+
+.leaflet-tooltip {
+    background-image : url("https://cdn.glitch.global/90845d8e-81a9-424d-b13a-0acd2c0b3b63/4b65a8b55dcdf3ee10db8703ec2b3be6.jpg?v=1700156070316");
+    background-repeat: no-repeat;
+    background-size  : cover;
+    color            : rgb(109, 42, 42);
+    border           : none;
+}
+
+input:checked~.checkmark {
+    background-image : url("https://cdn.glitch.global/90845d8e-81a9-424d-b13a-0acd2c0b3b63/4b65a8b55dcdf3ee10db8703ec2b3be6.jpg?v=1700156070316");
+    background-repeat: no-repeat;
+    background-size  : cover;
+    color            : rgb(109, 42, 42);
+    font-weight      : bold;
+    border-color     : rgb(109, 42, 42);
+}
+
+.detail {
+    display          : none;
+    position         : absolute;
+    top              : 1vh;
+    left             : 11vw;
+    z-index          : 97;
+    font-size        : 110%;
+    font-family      : 'Time new roman';
+    font-weight      : 999;
+    font-style       : italic;
+    color            : rgb(109, 42, 42);
+    background-image : linear-gradient(rgba(255, 255, 255, 0.522), rgba(255, 255, 255, 0.522)), url("https://cdn.glitch.global/90845d8e-81a9-424d-b13a-0acd2c0b3b63/4b65a8b55dcdf3ee10db8703ec2b3be6.jpg?v=1700156070316");
+    background-repeat: no-repeat;
+    background-size  : cover;
+    border-radius    : 6px;
+    border-style     : solid;
+    border-width     : .2vh;
+    border-color     : rgb(173, 130, 74);
+    padding          : .1vh .5vw;
+    width            : 18vw;
+}
+
+
+input:checked~.detail {
+    display        : flex;
+    justify-content: center;
+}
+
+
+.img_text {
+    width     : 11vw;
+    max-height: 20vh;
+
+    padding  : 0 1.rem;
+    font-size: 1.5vh;
+}
+
+#text_nam {
+    text-align : center;
+    font-family: 'Signika', sans-serif;
+    font-size  : 1.7vh;
+    top        : 0px;
+    margin     : .5rem 0px .2rem 0px;
+}
+
+#text_p {
+    text-align : justify;
+    font-family: 'Signika', sans-serif;
+    font-size  : 110%;
+    margin     : 0 .1rem .3rem .2rem;
+    padding    : 0 .3rem 0 0;
+    overflow   : auto;
+    max-height : 14vh;
+    text-indent: 1rem;
+}
+
+#text_p::-webkit-scrollbar {
+    width           : .3vw;
+    background-color: rgba(206, 206, 206, 0.596);
+}
+
+#text_p::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#text_p::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(-45deg, rgb(211, 163, 118), rgb(158, 126, 20));
+    border-radius   : 50px;
+}
+
+
+/* Áp dụng độ trễ cho icon-text */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background-image        : url("https://cdn.glitch.global/90845d8e-81a9-424d-b13a-0acd2c0b3b63/4b65a8b55dcdf3ee10db8703ec2b3be6.jpg?v=1700156070316") !important;
+    background-size         : cover !important;
+    background-position     : center;
+    background-repeat       : no-repeat;
+    /* background-blend-mode: screen; */
+
+}
+
+.leaflet-popup-content {
+    margin: .5rem !important;
+}
+
+.leaflet-popup {
+    bottom: 0 !important;
+}
+
+#info2 {
+    width            : 18vw;
+    background-image : url("https://cdn.glitch.global/90845d8e-81a9-424d-b13a-0acd2c0b3b63/4b65a8b55dcdf3ee10db8703ec2b3be6.jpg?v=1700156070316");
+    background-repeat: no-repeat;
+    background-size  : contain;
+    padding          : 1vh .1vw 0 1vw;
+    border-radius    : 10px;
+    display          : none;
+    z-index          : 98;
+    transition       : all 0.4s ease-in-out;
+}
+
+.active2 {
+    right     : 0%;
+    display   : block !important;
+    transition: all 0.4s ease-in-out;
+
+}
+
+#info2 h4 {
+    font-family  : 'Signika', sans-serif;
+    font-size    : 3vh;
+    color        : #333;
+    font-weight  : 600;
+    margin-bottom: .5vh;
+}
+
+.chugiai_li p {
+    font-family: 'Signika', sans-serif;
+    font-size  : 1.5vh;
+    color      : #333;
+    font-weight: 600;
+    align-items: center;
+}
+
+.chugiai_ul .chugiai_li {
+    display: flex;
+    height : 3vh;
+}
+
+.chugiai_ul {
+    padding: 0;
+
+}
+
+.chugiai_line {
+    width : 4vw;
+    height: .6vh;
+    margin: 1vh .5vw 0 0;
+}
+
+legend {
+    width        : 100%;
+    max-width    : 100%;
+    padding      : 0;
+    margin-bottom: .5rem;
+    font-size    : 80%;
+    line-height  : inherit;
+    color        : inherit;
+}
+
+
+
+.line0 {
+    background-color: #333;
+}
+
+.line1 {
+    border-top: #333 .6vh dashed;
+}
+
+.line2 {
+    background-color: #000080;
+}
+
+.line3 {
+    background-color: #2ca02c;
+}
+
+.line4 {
+    background-color: #330099;
+}
+
+.line5 {
+    background-color: #00CC00;
+}
+
+.line6 {
+    background-color: #9933CC;
+}
+
+.line7 {
+    background-color: #FF6600;
+}
+
+.line8 {
+    background-color: #FF0000;
+}
+
+.line9 {
+    background-color: #33FFFF;
+}
+
+.line10 {
+    background-color: #0000FF;
+}
+
+.line11 {
+    background-color: #FFCC00;
+}
+
+#p3 {
+    font-size       : 1.2vh;
+    font-family     : 'Arial';
+    color           : rgb(255, 0, 0);
+    margin          : .5vh 0 0 0;
+    height          : 1vh;
+    bottom          : 0;
+    font-weight     : bolder;
+    background-color: white;
+    padding         : 0 .2rem .5rem .2rem;
+    border-radius   : .3rem;
+}
+
+
+/* Trong file styles.css */
+/* .leaflet-control-layers-selector {
+      display: none;
+    }  */
+.leaflet-control-layers {
+    background-color: transparent !important;
+    border          : none !important;
+}
+
+.leaflet-control-layers-list {
+    background-color: transparent !important;
+}
+
+.leaflet-control-layers-base {
+    display         : flex;
+    background-color: transparent;
+}
+
+.cc {
+    top    : calc(82vh - 55px);
+    z-index: 1000;
+}
+
+.c_1 {
+    width  : auto;
+    height : auto;
+    padding: 0 0 0 .5rem;
+}
+
+.c_1 input {
+    display: none;
+}
+
+.c_1 p {
+    position         : sticky;
+    display          : flex !important;
+    align-items      : center;
+    justify-self     : center;
+    text-align       : center;
+    background-color : white;
+    background-repeat: no-repeat;
+    background-size  : 100%;
+    border           : 1px rgb(175, 173, 173) solid;
+    border-radius    : .4rem;
+    cursor           : pointer;
+    padding          : .5rem;
+    color            : #2d8be4;
+    font-size        : .8rem;
+}
+
+
+
+.leaflet-control-layers-base {
+    display: none;
+}
+
+.c_1 input:checked~p {
+    color           : red;
+    font-weight     : bold;
+    border          : 1px rgb(148, 147, 147) solid;
+    background-image: url('./asset/93-năm.png');
+}
+
+
+/* .leaflet-control-layers-list {
+    display: none !important; 
+  } */
+
+.leaflet-control-layers-base label {
+    display: block;
+    padding: 5px;
+}
+
+/* .leaflet-control-layers {
+    display: none;
+} */
+
+/* .leaflet-control-layers-expanded {
+    padding: 0 !important;
+} */
+
+.esri-truncated-attribution a,
+.esri-truncated-attribution span {
+    display: none !important;
+}
+
+#scr1 {
+    color           : rgb(16, 116, 152) !important;
+    background-color: #eaeaea94;
+    padding         : .3rem;
+    border          : solid .5px rgb(255, 255, 255);
+    border-radius   : 1rem;
+    text-decoration : none;
+}
+
+#vd3 {
+    width   : 40vw;
+    position: sticky;
+    right   : 0;
+}
+
+@media screen and (max-width: 1000px) {
+    #title .hh1 {
+        font-size: .7rem;
+    }
+
+    #info {
+        width       : 80vw;
+        height      : 82vh;
+        transition  : transform 1s ease;
+        /* transform: translateX(100%); */
+        right       : -81%;
+        display     : block;
+        transition  : all 1s ease-in-out;
+    }
+
+    .info_hh1 {
+        font-size: 80%;
+        padding  : .5vh 0;
+    }
+
+    .leaflet-container {
+        position   : relative;
+        right      : 0;
+        left       : 0;
+        width      : 100vw;
+        height     : 82vh;
+        /* left    : 20vw; */
+    }
+
+    .box {
+        display : block;
+        position: absolute;
+        top     : calc(16vh - 30px);
+        left    : .5vw;
+        padding : 0;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .box.container {
+        padding-left : 0px !important;
+        padding-right: 0px !important;
+        margin-bottom: 0px !important;
+        height       : 3.8vh;
+    }
+
+    .container .checkmark {
+        width      : 15vw;
+        height     : 3.8vh;
+        font-size  : 1.3vh;
+        padding-top: .7vh;
+    }
+
+    .detail {
+        top      : 3.5vh;
+        left     : 30vw;
+        font-size: 1.5vh;
+        width    : 52vw;
+    }
+
+    #info2 {
+        width: 60vw;
+    }
+
+    #info2 h4 {
+        font-size: 150%;
+    }
+
+    .info_img {
+        width  : 30vw;
+        padding: 0 1.5vw;
+    }
+
+    #p3 {
+        font-size: 70%;
+        padding  : .2rem .5rem 1.2rem .5rem;
+    }
+
+    .img_text {
+        width    : 35vw;
+        height   : 22vh;
+        overflow : auto;
+        padding  : 0 .1rem;
+        font-size: 1rem;
+    }
+
+    #text_nam {
+        font-size: 80%;
+        top      : 0px;
+        margin   : 0px;
+    }
+
+    #text_p {
+        font-size: 75%;
+        margin   : .1vh .5vw .3vh .5vw;
+    }
+
+    .img_text::-webkit-scrollbar {
+        width: .3vw;
+    }
+
+    .icon-image {
+        height: 1.8vh;
+
+    }
+
+    .icon-image1 {
+        height: 1.8vh;
+
+    }
+
+    .icon-text {
+        font-size        : .5rem;
+        margin           : 0 !important;
+        /* Reset margin to ensure proper alignment */
+        text-align       : center;
+        width            : 100%;
+        /* height        : 1vh; */
+        padding-bottom   : 2.vh;
+
+    }
+
+    .info_p {
+        padding  : 1vh 5vw;
+        font-size: 2vh;
+    }
+
+    #info::-webkit-scrollbar {
+        width: 1vw;
+    }
+
+    .footpage {
+        display        : block;
+        justify-content: center;
+        align-items    : center;
+        height         : 3.7vh;
+        bottom         : 0;
+    }
+
+    #ft {
+        margin         : 0;
+        top            : 0;
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+    }
+
+    body {
+        height: 100vh;
+        width : 100vw;
+    }
+
+    .leaflet-control-scale-line {
+        width: 20vw !important;
+    }
+
+    #ft .ft_a {
+        font-size : 45%;
+        text-align: center;
+    }
+
+    #ft p {
+        font-size: 40%;
+    }
+
+    .chugiai_line {
+        width : 10vw;
+        height: .6vh;
+        margin: 1vh .5vw 0 0;
+    }
+
+    .leaflet-popup-content-wrapper {
+        width: 39vw !important;
+    }
+
+    .leaflet-popup-content {
+        width : 39vw !important;
+        margin: 1vh 2vw !important;
+    }
+
+    .cc {
+        top: calc(83vh - 95px);
+    }
+
+    .c_1 {
+        padding: 0 0 0 .2rem;
+    }
+
+    #vd3 {
+        position: absolute;
+        right   : calc(30vw - 10px);
+    }
+}
