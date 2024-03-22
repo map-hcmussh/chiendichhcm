@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/chiendichhcm/static/css/main.1cc00ee9.css",
-    "main.js": "/chiendichhcm/static/js/main.b4f6db43.js",
+    "main.js": "/chiendichhcm/static/js/main.2433d37b.js",
     "static/js/453.9a8171b5.chunk.js": "/chiendichhcm/static/js/453.9a8171b5.chunk.js",
     "static/media/video1.mp4": "/chiendichhcm/static/media/video1.26c0f323f4a9ffcaa568.mp4",
     "static/media/video4.mp4": "/chiendichhcm/static/media/video4.7123bf0a73c7a1b01ef4.mp4",
@@ -17,11 +17,11 @@
     "static/media/red-arrow.gif": "/chiendichhcm/static/media/red-arrow.97849bbe68746c39949d.gif",
     "index.html": "/chiendichhcm/index.html",
     "main.1cc00ee9.css.map": "/chiendichhcm/static/css/main.1cc00ee9.css.map",
-    "main.b4f6db43.js.map": "/chiendichhcm/static/js/main.b4f6db43.js.map",
+    "main.2433d37b.js.map": "/chiendichhcm/static/js/main.2433d37b.js.map",
     "453.9a8171b5.chunk.js.map": "/chiendichhcm/static/js/453.9a8171b5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1cc00ee9.css",
-    "static/js/main.b4f6db43.js"
+    "static/js/main.2433d37b.js"
   ]
 }
